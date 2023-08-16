@@ -8,11 +8,11 @@ html,body{
   padding: 0px;
   font-size: 16px;
  
+  background-color: rgb(235, 235, 235);
 }
 
 .container{
      height: 100vh; 
-    background-color: cadetblue;
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
@@ -78,7 +78,6 @@ ul{
 
 /*Main Start*/
 .main{
-    background-color: gray;
     display: grid;
     grid-template-rows: 1fr 5fr;
 }
@@ -178,15 +177,19 @@ ul{
 }
 
 .projects{
-    background-color: azure;
     display: grid;
     grid-template-rows: auto 1fr;
+    >h2{
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
 }
 .sidecontent{
-    background-color: rgb(151, 151, 151);
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
+
 }
 
 h2{
@@ -194,23 +197,32 @@ h2{
     margin: 0;
 }
 
+
+
 .projectcards{
-    background-color: cornflowerblue;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    /*makes rows grow at same width*/
+    grid-auto-rows: 1fr;
     gap: 20px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
 .card{
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     display: grid;
+    box-shadow: 3px 3px 6px #01010116;
 }
 
 .anouncementcard{
     display: grid;
     grid-template-rows: auto 1fr;
+    >h2{
+        margin-bottom: 10px;
+    }
 }
 
 .announcements{
@@ -233,4 +245,72 @@ h2{
 
 .announcementsitem{
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    >h4{
+        margin:2px;
+        margin-top:4px;
+
+    }
+    >p{
+        padding-bottom: 5px;
+        max-width: 75ch;
+        overflow: hidden;
+        margin:2px;
+        font-size: 0.9rem;
+    }
+}
+
+.trendingitem{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    gap:10px;
+    row-gap: 2px;
+    >img{
+        width: 3rem;
+        height: 3rem;
+        grid-row: 1/3;
+    }
+
+    >p{
+        align-self: flex-end;
+        margin:-0;
+        padding: 0;
+    }
+    >p+p{
+        align-self: flex-start;
+    }
+
+}
+
+.project-card{
+    border-left: 10px solid orange;
+    
+}
+
+.project{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 20px;
+}
+
+.projecttext{
+    >h2{
+        margin-bottom:5px ;
+    }
+    >p{
+        margin: 0
+    }
+}
+.project-options{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    >img{
+        width: 30px;
+        height: 30px;
+    }
 }
